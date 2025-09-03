@@ -7,33 +7,25 @@
   "regions": ["gru1"],
   "headers": [
     {
-      "source": "/(.*)",
+      "source": "/_next/static/(.*)",
       "headers": [
         {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
         },
         {
-          "key": "X-Frame-Options",
-          "value": "DENY"
-        },
-        {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
-        },
-        {
-          "key": "Referrer-Policy",
-          "value": "strict-origin-when-cross-origin"
-        },
-        {
-          "key": "Permissions-Policy",
-          "value": "camera=(), microphone=(), geolocation=()"
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
         }
       ]
     },
     {
-      "source": "/_next/static/(.*)",
+      "source": "/(.*).css",
       "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/css"
+        },
         {
           "key": "Cache-Control",
           "value": "public, max-age=31536000, immutable"
